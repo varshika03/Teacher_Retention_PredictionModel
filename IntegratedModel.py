@@ -7,23 +7,23 @@ from sklearn import metrics
 from sklearn.svm import SVC
 import pickle as p
 
-with open('C:\\Users\\VANDANA\\Desktop\\TeacherAttritionItems\\TrainedModelUsingDecisiongTree.pkl', 'rb') as fid:
+with open('TrainedModelUsingDecisiongTree.pkl', 'rb') as fid:
     my_tree = p.load(fid)
 
-with open('C:\\Users\\VANDANA\\Desktop\\TeacherAttritionItems\\TrainedModelUsingLogReg.pkl', 'rb') as fid:
+with open('TrainedModelUsingLogReg.pkl', 'rb') as fid:
     lr = p.load(fid)
 
-with open('C:\\Users\\VANDANA\\Desktop\\TeacherAttritionItems\\TrainedModelUsingSVMLinear.pkl', 'rb') as fid:
+with open('TrainedModelUsingSVMLinear.pkl', 'rb') as fid:
     svm_linear = p.load(fid)
 
-with open('C:\\Users\\VANDANA\\Desktop\\TeacherAttritionItems\\TrainedModelUsingSVMPoly.pkl', 'rb') as fid:
+with open('TrainedModelUsingSVMPoly.pkl', 'rb') as fid:
     svm_poly= p.load(fid)
 
-with open('C:\\Users\\VANDANA\\Desktop\\TeacherAttritionItems\\TrainedRandomForest.pkl', 'rb') as fid:
+with open('TrainedRandomForest.pkl', 'rb') as fid:
     rforest= p.load(fid)
 
     
-data = pd.read_csv("C:\\Users\\VANDANA\\Desktop\\TeacherAttritionItems\\testdata.csv")
+data = pd.read_csv("testdata.csv")
 test=data.tail(1)
 test_features = test[["Age","Experience","Qualification","Subjects Taught","Gender","Marital Status","Salary","Attendance","Work Satisfaction","Migration"]].values
 predictions_tree=my_tree.predict(test_features)
